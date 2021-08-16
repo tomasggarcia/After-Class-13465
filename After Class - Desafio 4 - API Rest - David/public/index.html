@@ -14,16 +14,35 @@
 
     <div>
 
-        Acá va el mark-up del formulario.
+        <h4>Ingresar un nuevo producto:</h4>
 
-        No recomiendo usar el tag "form" sino un botón que dispare una función de JavaScript
-        que haga el POST con el método fetch.
+        <form id="formulario" method="POST" action="/api/productos">
 
-        La función puede ponerse dentro de un tag "script" o en un archivo de JavaScript aparte (cargar.js)
+          <label for="title">Título:</label>
+          <input type="text" name="title" id="title" required>
+
+          <label for="price">Precio:</label>
+          <input type="text" name="price" id="price" required>
+
+          <label for="thumbnail">URL de la imagen:</label>
+          <input type="text" name="thumbnail" id="thumbnail" required>
+
+          <input class="button-primary" type="submit" value="Enviar">
+
+        </form>
 
     </div>
 
-    <script src="./js/cargar.js"></script>
+    <script>
+
+        document.getElementById('formulario').onsubmit = () => {
+
+            let titulo = document.getElementById('title').value;
+            let precio = document.getElementById('price').value;
+            alert('Nuevo producto agregado: \n Título: ' + titulo + '\n Precio: $' + precio)
+        };
+
+    </script>
     
 </body>
 
