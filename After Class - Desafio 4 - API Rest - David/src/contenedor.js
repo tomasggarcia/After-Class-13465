@@ -26,7 +26,7 @@ class Contenedor {
     saveList = async (nuevaLista) => {
         
         try {
-            await fs.writeFile(this.archivo, nuevaLista); // Guardar archivo JSON.
+            await fs.writeFile(this.archivo, nuevaLista);
         }
         catch (error) {
 
