@@ -27,9 +27,7 @@ router.post('/', async (req, res) => {
   await contenedor.saveNewProduct(body);
 
   // Re-direcciona de vuelta al formulario:
-  res.writeHead(301, {'Location': '/'});
-
-  res.send()
+  res.redirect('/');
 });
 
 
